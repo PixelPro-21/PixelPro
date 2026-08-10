@@ -282,11 +282,11 @@ footer{
     padding:75px 20px;
   }
 }
-  .contact-buttons {
+.contact-buttons {
   display: flex;
   justify-content: center;
-  gap: 28px;
-  margin-top: 20px;
+  gap: 35px;
+  margin-top: 25px;
 }
 
 .contact-icon {
@@ -294,23 +294,32 @@ footer{
   flex-direction: column;
   align-items: center;
   text-decoration: none;
-  transition: transform 0.2s ease;
+  color: var(--white);
+  transition: transform 0.25s ease;
 }
 
 .contact-icon .icon {
-  font-size: 28px;
+  font-size: 32px;
   line-height: 1;
-  margin-bottom: 6px;
+  margin-bottom: 7px;
+  color: var(--white);
 }
 
 .contact-icon small {
-  font-size: 12px;
-  opacity: 0.8;
+  font-size: 13px;
+  font-weight: bold;
+  color: var(--white);
+  opacity: 1;
 }
 
 .contact-icon:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
 }
+
+.contact-icon:hover .icon,
+.contact-icon:hover small {
+  color: var(--red);
+  }
   
 </style>
 </head>
@@ -529,7 +538,7 @@ footer{
     <div class="contact-buttons">
 
   <a class="contact-icon" href="https://wa.me/2349029308430" target="_blank" rel="noopener">
-    <span class="icon">◉</span>
+    <span class="icon">☏</span>
     <small>WhatsApp</small>
   </a>
 
