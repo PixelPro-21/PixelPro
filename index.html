@@ -3,9 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>PixelPro — Framing Excellence</title>
 
 <style>
+:root{
+  --black:#060807;
+  --red:#B92817;
+  --white:#FAF5F5;
+  --muted:#aaa;
+  --dark:#101211;
+  --border:#252827;
+}
+
 *{
   margin:0;
   padding:0;
@@ -17,9 +27,9 @@ html{
 }
 
 body{
-  font-family:Arial, sans-serif;
-  background:#0b0b0b;
-  color:#fff;
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--black);
+  color:var(--white);
   line-height:1.6;
 }
 
@@ -28,8 +38,8 @@ header{
   top:0;
   width:100%;
   z-index:1000;
-  background:rgba(11,11,11,.94);
-  border-bottom:1px solid #222;
+  background:rgba(6,8,7,.95);
+  border-bottom:1px solid var(--border);
 }
 
 nav{
@@ -42,24 +52,24 @@ nav{
 }
 
 .logo{
-  font-size:24px;
+  font-size:25px;
   font-weight:800;
   letter-spacing:1px;
 }
 
 .logo span{
-  color:#c9a227;
+  color:var(--red);
 }
 
 nav a{
-  color:#fff;
+  color:var(--white);
   text-decoration:none;
   margin-left:25px;
   font-size:14px;
 }
 
 nav a:hover{
-  color:#c9a227;
+  color:var(--red);
 }
 
 .hero{
@@ -70,43 +80,59 @@ nav a:hover{
   text-align:center;
   padding:120px 25px 70px;
   background:
-    radial-gradient(circle at center,#292929 0,#0b0b0b 65%);
+    radial-gradient(circle at center,#171b19 0,#060807 65%);
 }
 
 .hero-content{
   max-width:850px;
 }
 
+.eyebrow{
+  color:var(--red);
+  font-size:13px;
+  font-weight:bold;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  margin-bottom:18px;
+}
+
 .hero h1{
-  font-size:clamp(45px,8vw,90px);
-  line-height:1;
-  margin-bottom:20px;
+  font-size:clamp(48px,8vw,92px);
+  line-height:.98;
+  margin-bottom:25px;
 }
 
 .hero h1 span{
-  color:#c9a227;
+  color:var(--red);
 }
 
 .hero p{
-  font-size:20px;
-  color:#bbb;
-  margin-bottom:30px;
+  max-width:650px;
+  margin:0 auto 35px;
+  font-size:19px;
+  color:#bcbcbc;
 }
 
 .btn{
   display:inline-block;
-  padding:14px 28px;
-  background:#c9a227;
-  color:#000;
+  padding:14px 30px;
+  background:var(--red);
+  color:var(--white);
   text-decoration:none;
   font-weight:bold;
   border-radius:4px;
+  transition:.25s;
+}
+
+.btn:hover{
+  background:#d12d1a;
+  transform:translateY(-2px);
 }
 
 section{
   max-width:1100px;
   margin:auto;
-  padding:90px 25px;
+  padding:95px 25px;
 }
 
 .section-title{
@@ -115,27 +141,34 @@ section{
 }
 
 .section-title h2{
-  font-size:38px;
+  font-size:40px;
+  margin-bottom:8px;
 }
 
 .section-title p{
-  color:#999;
+  color:var(--muted);
 }
 
 .about{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:50px;
+  gap:55px;
   align-items:center;
 }
 
 .about h2{
-  font-size:38px;
+  font-size:40px;
   margin-bottom:20px;
 }
 
 .about p{
-  color:#bbb;
+  color:#bcbcbc;
+}
+
+.about-mark{
+  border-left:5px solid var(--red);
+  padding:30px;
+  background:var(--dark);
 }
 
 .services{
@@ -145,14 +178,26 @@ section{
 }
 
 .card{
-  background:#151515;
-  border:1px solid #252525;
-  padding:30px;
-  border-radius:8px;
+  background:var(--dark);
+  border:1px solid var(--border);
+  padding:32px;
+  border-radius:7px;
+  transition:.25s;
+}
+
+.card:hover{
+  border-color:var(--red);
+  transform:translateY(-4px);
+}
+
+.card-number{
+  color:var(--red);
+  font-weight:bold;
+  margin-bottom:20px;
 }
 
 .card h3{
-  color:#c9a227;
+  font-size:22px;
   margin-bottom:12px;
 }
 
@@ -166,39 +211,53 @@ section{
   gap:15px;
 }
 
+.portfolio-item{
+  overflow:hidden;
+  border-radius:6px;
+  background:var(--dark);
+}
+
 .portfolio img{
   width:100%;
-  height:300px;
+  height:320px;
   object-fit:cover;
-  border-radius:6px;
-  transition:.3s;
+  display:block;
+  transition:.4s;
 }
 
 .portfolio img:hover{
-  transform:scale(1.02);
+  transform:scale(1.04);
 }
 
 .contact{
   text-align:center;
-  background:#151515;
-  border-radius:10px;
+  background:var(--dark);
+  border:1px solid var(--border);
+  border-top:4px solid var(--red);
+  border-radius:8px;
 }
 
 .contact p{
   color:#bbb;
-  margin:10px 0;
+  margin:9px 0;
+}
+
+.contact strong{
+  color:var(--white);
 }
 
 footer{
   text-align:center;
-  padding:30px;
-  border-top:1px solid #222;
+  padding:35px 20px;
+  border-top:1px solid var(--border);
   color:#777;
+  font-size:13px;
 }
 
 @media(max-width:700px){
+
   nav{
-    padding:15px;
+    padding:16px 18px;
   }
 
   nav div:last-child{
@@ -212,7 +271,15 @@ footer{
   }
 
   .portfolio img{
-    height:350px;
+    height:380px;
+  }
+
+  .hero h1{
+    font-size:52px;
+  }
+
+  section{
+    padding:75px 20px;
   }
 }
 </style>
@@ -222,7 +289,10 @@ footer{
 
 <header>
 <nav>
-  <div class="logo">Pixel<span>Pro</span></div>
+
+  <div class="logo">
+    Pixel<span>Pro</span>
+  </div>
 
   <div>
     <a href="#about">About</a>
@@ -230,126 +300,217 @@ footer{
     <a href="#portfolio">Portfolio</a>
     <a href="#contact">Contact</a>
   </div>
+
 </nav>
 </header>
 
 <main>
 
 <section class="hero">
+
   <div class="hero-content">
-    <h1>Framing <span>Excellence.</span></h1>
+
+    <div class="eyebrow">
+      Framing Excellence
+    </div>
+
+    <h1>
+      Ideas, <span>beautifully framed.</span>
+    </h1>
+
     <p>
-      Creative design, photo retouching and video editing
-      crafted to make ideas stand out.
+      Graphic design, photo retouching and video editing
+      crafted to turn ideas into striking visual experiences.
     </p>
-    <a class="btn" href="#portfolio">View My Work</a>
+
+    <a class="btn" href="#portfolio">
+      View My Work
+    </a>
+
   </div>
+
 </section>
 
+
 <section id="about">
+
   <div class="about">
+
     <div>
       <h2>About PixelPro</h2>
+
       <p>
         I’m a passionate creative designer with 5 years of
-        experience in graphic design, photo retouching, and
-        video editing. I turn ideas, brand messages, and
-        photographs into visually engaging work.
+        experience in graphic design, photo retouching and
+        video editing.
+      </p>
+
+      <br>
+
+      <p>
+        I take ideas, photographs and brand messages and turn
+        them into visuals that are engaging, polished and
+        purposeful.
       </p>
     </div>
 
-    <div>
+    <div class="about-mark">
+
       <p>
         My approach is simple: understand the idea, bring
         creativity into it, and pay attention to the details
         that make the final result stand out.
       </p>
+
     </div>
+
   </div>
+
 </section>
 
+
 <section id="services">
+
   <div class="section-title">
+
     <h2>What I Do</h2>
-    <p>Creative services built around your vision.</p>
+
+    <p>
+      Creative services built around your vision.
+    </p>
+
   </div>
+
 
   <div class="services">
 
     <div class="card">
+
+      <div class="card-number">01</div>
+
       <h3>Graphic Design</h3>
+
       <p>
         Posters, flyers, social media designs, branding
-        materials and other visual content.
+        materials and visual content that communicates clearly.
       </p>
+
     </div>
 
+
     <div class="card">
+
+      <div class="card-number">02</div>
+
       <h3>Photo Retouching</h3>
+
       <p>
-        Professional photo enhancement, retouching,
-        colour correction and creative manipulation.
+        Professional enhancement, retouching, colour
+        correction and creative image manipulation.
       </p>
+
     </div>
 
+
     <div class="card">
+
+      <div class="card-number">03</div>
+
       <h3>Video Editing</h3>
+
       <p>
-        Clean, engaging video edits designed for brands,
-        events, social media and personal projects.
+        Clean and engaging edits for brands, events,
+        social media and creative projects.
       </p>
+
     </div>
 
   </div>
+
 </section>
 
+
 <section id="portfolio">
+
   <div class="section-title">
+
     <h2>Selected Work</h2>
-    <p>A glimpse into my creative work.</p>
+
+    <p>
+      A glimpse into my creative work.
+    </p>
+
   </div>
+
 
   <div class="portfolio">
 
-    <img src="0M4A2036.jpg" alt="PixelPro creative work">
+    <div class="portfolio-item">
+      <img src="0M4A2036.jpg" alt="PixelPro creative work">
+    </div>
 
-    <img src="0M4A2044.jpg" alt="PixelPro creative work">
+    <div class="portfolio-item">
+      <img src="0M4A2044.jpg" alt="PixelPro creative work">
+    </div>
 
-    <img src="1000076101.png" alt="PixelPro creative work">
+    <div class="portfolio-item">
+      <img src="1000076101.png" alt="PixelPro creative work">
+    </div>
 
-    <img src="1000102253.png" alt="PixelPro creative work">
+    <div class="portfolio-item">
+      <img src="1000102253.png" alt="PixelPro creative work">
+    </div>
 
-    <img src="1000316868.png" alt="PixelPro creative work">
+    <div class="portfolio-item">
+      <img src="1000316868.png" alt="PixelPro creative work">
+    </div>
 
-    <img src="1000346398.png" alt="PixelPro creative work">
+    <div class="portfolio-item">
+      <img src="1000346398.png" alt="PixelPro creative work">
+    </div>
 
   </div>
+
 </section>
 
+
 <section id="contact">
+
   <div class="contact">
+
     <div class="section-title">
+
       <h2>Let's Create Something Great</h2>
-      <p>Have a project in mind? Let's talk.</p>
+
+      <p>
+        Have a project in mind? Let's talk.
+      </p>
+
     </div>
 
     <p><strong>PixelPro</strong></p>
+
     <p>09029308430</p>
+
     <p>sirgentikoabasi@gmail.com</p>
 
     <br>
 
-    <a class="btn" href="mailto:sirgentikoabasi@gmail.com">
-      Get In Touch
+    <a class="btn"
+       href="mailto:sirgentikoabasi@gmail.com">
+       Get In Touch
     </a>
+
   </div>
+
 </section>
 
 </main>
+
 
 <footer>
   © 2026 PixelPro — Framing Excellence
 </footer>
 
 </body>
-    </html>
+</html>
