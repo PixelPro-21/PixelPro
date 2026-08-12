@@ -365,66 +365,398 @@
       font-size: 14px;
     }
 
-    /* =========================
-       MY JOBS
-       ALL WORK TOGETHER
-    ========================== */
+<!-- =========================
+     MY JOBS
+========================= -->
 
-    .portfolio {
-      background: var(--black-soft);
-    }
+<section class="portfolio" id="portfolio">
+  <div class="container">
 
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
+    <div class="section-heading">
 
-    .portfolio-item {
-      aspect-ratio: 4 / 3;
-      overflow: hidden;
-      border-radius: 10px;
-      background: #111;
-      border: 1px solid var(--line);
-      position: relative;
-      display: block;
-    }
+      <img
+        src="pixelpro-logo.png"
+        class="section-mark"
+        style="width:190px;"
+        alt="PixelPro"
+      >
 
-    .portfolio-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: .5s ease;
-    }
+      <h2>My Jobs</h2>
 
-    .portfolio-item:hover img {
-      transform: scale(1.06);
-    }
+      <p>
+        A collection of creative work by PixelPro.
+      </p>
 
-    .portfolio-overlay {
-      position: absolute;
-      inset: auto 0 0 0;
-      padding: 25px 20px 18px;
-      background: linear-gradient(
-        transparent,
-        rgba(0,0,0,.9)
-      );
-      opacity: 0;
-      transition: .3s ease;
-    }
+    </div>
 
-    .portfolio-item:hover .portfolio-overlay {
-      opacity: 1;
-    }
+    <div class="portfolio-grid">
 
-    .portfolio-overlay strong {
-      display: block;
-      font-size: 14px;
-    }
+      <!-- CREATIVE -->
 
-    .portfolio-overlay span {
-      font-size: 11px;
-      color: #bbb;
+      <a class="portfolio-item" href="#">
+        <img src="Portfolio-creative (1).jpg" alt="PixelPro creative project">
+        <div class="portfolio-overlay">
+          <strong>Creative Project</strong>
+          <span>PixelPro</span>
+        </div>
+      </a>
+
+      <a class="portfolio-item" href="#">
+        <img src="Portfolio-creative (2).jpg" alt="PixelPro creative project">
+        <div class="portfolio-overlay">
+          <strong>Creative Project</strong>
+          <span>PixelPro</span>
+        </div>
+      </a>
+
+
+      <!-- EVENT -->
+
+      <a class="portfolio-item" href="#">
+        <img src="Portfolio-event (1).jpg" alt="PixelPro event project">
+        <div class="portfolio-overlay">
+          <strong>Event Project</strong>
+          <span>PixelPro</span>
+        </div>
+      </a>
+
+      <a class="portfolio-item" href="#">
+        <img src="Portfolio-event (2).jpg" alt="PixelPro event project">
+        <div class="portfolio-overlay">
+          <strong>Event Project</strong>
+          <span>PixelPro</span>
+        </div>
+      </a>
+
+      <a class="portfolio-item" href="#">
+        <img src="Portfolio-event (3).jpg" alt="PixelPro event project">
+        <div class="portfolio-overlay">
+          <strong>Event Project</strong>
+          <span>PixelPro</span>
+        </div>
+      </a>
+
+      <a class="portfolio-item" href="#">
+        <img src="Portfolio-event (4).jpg" alt="PixelPro event project">
+        <div class="portfolio-overlay">
+          <strong>Event Project</strong>
+          <span>PixelPro</span>
+        </div>
+      </a>
+
+      <a class="portfolio-item" href="#">
+        <img src="Portfolio-event (5).jpg" alt="PixelPro event project">
+        <div class="portfolio-overlay">
+          <strong>Event Project</strong>
+          <span>PixelPro</span>
+        </div>
+      </a>
+
+
+      <!-- GRAPHIC DESIGN -->
+
+      <a class="portfolio-item" href="#">
+        <img src="Portfolio-graphic design (1).png" alt="PixelPro graphic design project">
+        <div class="portfolio-overlay">
+          <strong>Graphic Design Project</strong>
+          <span>PixelPro</span>
+        </div>
+      </a>
+
+      <a class="portfolio-item" href="#">
+        <img src="Portfolio-graphic design (1).jpg" alt="PixelPro graphic design project">
+        <div class="portfolio-overlay">
+          <strong>Graphic Design Project</strong>
+          <span>PixelPro</span>
+        </div>
+      </a>
+
+      <a class="portfolio-item" href="#">
+        <img src="Portfolio-graphic design (2).png" alt="PixelPro graphic design project">
+        <div class="portfolio-overlay">
+          <strong>Graphic Design Project</strong>
+          <span>PixelPro</span>
+        </div>
+      </a>
+
+      <a class="portfolio-item" href="#">
+        <img src="Portfolio-graphic design (2).jpg" alt="PixelPro graphic design project">
+        <div class="portfolio-overlay">
+          <strong>Graphic Design Project</strong>
+          <span>PixelPro</span>
+        </div>
+      </a>
+
+      <a class="portfolio-item" href="#">
+        <img src="Portfolio-graphic design (3).png" alt="PixelPro graphic design project">
+        <div class="portfolio-overlay">
+          <strong>Graphic Design Project</strong>
+          <span>PixelPro</span>
+        </div>
+      </a>
+
+      <a class="portfolio-item" href="#">
+        <img src="Portfolio-graphic design (3).jpg" alt="PixelPro graphic design project">
+        <div class="portfolio-overlay">
+          <strong>Graphic Design Project</strong>
+          <span>PixelPro</span>
+        </div>
+      </a>
+
+      <a class="portfolio-item" href="#">
+        <img src="Portfolio-graphic design (4).png" alt="PixelPro graphic design project">
+        <div class="portfolio-overlay">
+          <strong>Graphic Design Project</strong>
+          <span>PixelPro</span>
+        </div>
+      </a>
+
+      <a class="portfolio-item" href="#">
+        <img src="Portfolio-graphic design (4).jpg" alt="PixelPro graphic design project">
+        <div class="portfolio-overlay">
+          <strong>Graphic Design Project</strong>
+          <span>PixelPro</span>
+        </div>
+      </a>
+
+      <a class="portfolio-item" href="#">
+        <img src="Portfolio-graphic design (5).png" alt="PixelPro graphic design project">
+        <div class="portfolio-overlay">
+          <strong>Graphic Design Project</strong>
+          <span>PixelPro</span>
+        </div>
+      </a>
+
+      <a class="portfolio-item" href="#">
+        <img src="Portfolio-graphic design (6).png" alt="PixelPro graphic design project">
+        <div class="portfolio-overlay">
+          <strong>Graphic Design Project</strong>
+          <span>PixelPro</span>
+        </div>
+      </a>
+
+      <a class="portfolio-item" href="#">
+        <img src="Portfolio-graphic design (7).png" alt="PixelPro graphic design project">
+        <div class="portfolio-overlay">
+          <strong>Graphic Design Project</strong>
+          <span>PixelPro</span>
+        </div>
+      </a>
+
+      <a class="portfolio-item" href="#">
+        <img src="Portfolio-graphic design (8).png" alt="PixelPro graphic design project">
+        <div class="portfolio-overlay">
+          <strong>Graphic Design Project</strong>
+          <span>PixelPro</span>
+        </div>
+      </a>
+
+      <a class="portfolio-item" href="#">
+        <img src="Portfolio-graphic design (9).png" alt="PixelPro graphic design project">
+        <div class="portfolio-overlay">
+          <strong>Graphic Design Project</strong>
+          <span>PixelPro</span>
+        </div>
+      </a>
+
+      <a class="portfolio-item" href="#">
+        <img src="Portfolio-graphic design (10).png" alt="PixelPro graphic design project">
+        <div class="portfolio-overlay">
+          <strong>Graphic Design Project</strong>
+          <span>PixelPro</span>
+        </div>
+      </a>
+
+
+      <!-- PORTRAIT PHOTOGRAPHY -->
+
+      <a class="portfolio-item" href="#">
+        <img src="Portfolio-portrait photography (1).jpg" alt="PixelPro portrait photography">
+        <div class="portfolio-overlay">
+          <strong>Portrait Photography</strong>
+          <span>PixelPro</span>
+        </div>
+      </a>
+
+      <a class="portfolio-item" href="#">
+        <img src="Portfolio-portrait photography (2).jpg" alt="PixelPro portrait photography">
+        <div class="portfolio-overlay">
+          <strong>Portrait Photography</strong>
+          <span>PixelPro</span>
+        </div>
+      </a>
+
+      <a class="portfolio-item" href="#">
+        <img src="Portfolio-portrait photography (3).jpg" alt="PixelPro portrait photography">
+        <div class="portfolio-overlay">
+          <strong>Portrait Photography</strong>
+          <span>PixelPro</span>
+        </div>
+      </a>
+
+      <a class="portfolio-item" href="#">
+        <img src="Portfolio-portrait photography (4).jpg" alt="PixelPro portrait photography">
+        <div class="portfolio-overlay">
+          <strong>Portrait Photography</strong>
+          <span>PixelPro</span>
+        </div>
+      </a>
+
+      <a class="portfolio-item" href="#">
+        <img src="Portfolio-portrait photography (5).jpg" alt="PixelPro portrait photography">
+        <div class="portfolio-overlay">
+          <strong>Portrait Photography</strong>
+          <span>PixelPro</span>
+        </div>
+      </a>
+
+      <a class="portfolio-item" href="#">
+        <img src="Portfolio-portrait photography (6).jpg" alt="PixelPro portrait photography">
+        <div class="portfolio-overlay">
+          <strong>Portrait Photography</strong>
+          <span>PixelPro</span>
+        </div>
+      </a>
+
+      <a class="portfolio-item" href="#">
+        <img src="Portfolio-portrait photography (7).jpg" alt="PixelPro portrait photography">
+        <div class="portfolio-overlay">
+          <strong>Portrait Photography</strong>
+          <span>PixelPro</span>
+        </div>
+      </a>
+
+      <a class="portfolio-item" href="#">
+        <img src="Portfolio-portrait photography (8).jpg" alt="PixelPro portrait photography">
+        <div class="portfolio-overlay">
+          <strong>Portrait Photography</strong>
+          <span>PixelPro</span>
+        </div>
+      </a>
+
+      <a class="portfolio-item" href="#">
+        <img src="Portfolio-portrait photography (9).jpg" alt="PixelPro portrait photography">
+        <div class="portfolio-overlay">
+          <strong>Portrait Photography</strong>
+          <span>PixelPro</span>
+        </div>
+      </a>
+
+      <a class="portfolio-item" href="#">
+        <img src="Portfolio-portrait photography (10).jpg" alt="PixelPro portrait photography">
+        <div class="portfolio-overlay">
+          <strong>Portrait Photography</strong>
+          <span>PixelPro</span>
+        </div>
+      </a>
+
+      <a class="portfolio-item" href="#">
+        <img src="Portfolio-portrait photography (11).jpg" alt="PixelPro portrait photography">
+        <div class="portfolio-overlay">
+          <strong>Portrait Photography</strong>
+          <span>PixelPro</span>
+        </div>
+      </a>
+
+      <a class="portfolio-item" href="#">
+        <img src="Portfolio-portrait photography (12).jpg" alt="PixelPro portrait photography">
+        <div class="portfolio-overlay">
+          <strong>Portrait Photography</strong>
+          <span>PixelPro</span>
+        </div>
+      </a>
+
+      <a class="portfolio-item" href="#">
+        <img src="Portfolio-portrait photography (13).jpg" alt="PixelPro portrait photography">
+        <div class="portfolio-overlay">
+          <strong>Portrait Photography</strong>
+          <span>PixelPro</span>
+        </div>
+      </a>
+
+      <a class="portfolio-item" href="#">
+        <img src="Portfolio-portrait photography (14).jpg" alt="PixelPro portrait photography">
+        <div class="portfolio-overlay">
+          <strong>Portrait Photography</strong>
+          <span>PixelPro</span>
+        </div>
+      </a>
+
+      <a class="portfolio-item" href="#">
+        <img src="Portfolio-portrait photography (15).jpg" alt="PixelPro portrait photography">
+        <div class="portfolio-overlay">
+          <strong>Portrait Photography</strong>
+          <span>PixelPro</span>
+        </div>
+      </a>
+
+      <a class="portfolio-item" href="#">
+        <img src="Portfolio-portrait photography (16).jpg" alt="PixelPro portrait photography">
+        <div class="portfolio-overlay">
+          <strong>Portrait Photography</strong>
+          <span>PixelPro</span>
+        </div>
+      </a>
+
+      <a class="portfolio-item" href="#">
+        <img src="Portfolio-portrait photography (17).jpg" alt="PixelPro portrait photography">
+        <div class="portfolio-overlay">
+          <strong>Portrait Photography</strong>
+          <span>PixelPro</span>
+        </div>
+      </a>
+
+      <a class="portfolio-item" href="#">
+        <img src="Portfolio-portrait photography (18).jpg" alt="PixelPro portrait photography">
+        <div class="portfolio-overlay">
+          <strong>Portrait Photography</strong>
+          <span>PixelPro</span>
+        </div>
+      </a>
+
+      <a class="portfolio-item" href="#">
+        <img src="Portfolio-portrait photography (19).jpg" alt="PixelPro portrait photography">
+        <div class="portfolio-overlay">
+          <strong>Portrait Photography</strong>
+          <span>PixelPro</span>
+        </div>
+      </a>
+
+      <a class="portfolio-item" href="#">
+        <img src="Portfolio-portrait photography (20).jpg" alt="PixelPro portrait photography">
+        <div class="portfolio-overlay">
+          <strong>Portrait Photography</strong>
+          <span>PixelPro</span>
+        </div>
+      </a>
+
+      <a class="portfolio-item" href="#">
+        <img src="Portfolio-portrait photography (21).jpg" alt="PixelPro portrait photography">
+        <div class="portfolio-overlay">
+          <strong>Portrait Photography</strong>
+          <span>PixelPro</span>
+        </div>
+      </a>
+
+      <a class="portfolio-item" href="#">
+        <img src="Portfolio-portrait photography (22).jpg" alt="PixelPro portrait photography">
+        <div class="portfolio-overlay">
+          <strong>Portrait Photography</strong>
+          <span>PixelPro</span>
+        </div>
+      </a>
+
+      <a class="portfolio-item" href="#">
+        <img src="Portfolio-portrait photography (23).jpg" alt="PixelPro portrait photography">
+        <div class="portfolio-overlay">
+          <strong>Portrait Photography</strong>
+          <span>PixelPro</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
     }
 
     /* =========================
