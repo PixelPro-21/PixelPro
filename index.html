@@ -11,12 +11,10 @@
     :root {
       --black: #050505;
       --black-soft: #0b0b0b;
-      --card: #101010;
       --white: #ffffff;
       --muted: #a6a6a6;
       --line: rgba(255,255,255,0.09);
       --red: #ff2028;
-      --red-dark: #b90008;
       --max: 1180px;
     }
 
@@ -55,7 +53,7 @@
 
     /* =========================
        HEADER
-    ========================= */
+    ========================== */
 
     header {
       position: fixed;
@@ -119,7 +117,7 @@
 
     /* =========================
        HERO
-    ========================= */
+    ========================== */
 
     .hero {
       min-height: 100vh;
@@ -224,8 +222,8 @@
     }
 
     /* =========================
-       SECTION BASICS
-    ========================= */
+       SECTIONS
+    ========================== */
 
     section {
       padding: 110px 0;
@@ -255,7 +253,7 @@
 
     /* =========================
        ABOUT
-    ========================= */
+    ========================== */
 
     .about {
       background: var(--black-soft);
@@ -329,7 +327,7 @@
 
     /* =========================
        SERVICES
-    ========================= */
+    ========================== */
 
     .services-grid {
       display: grid;
@@ -368,8 +366,9 @@
     }
 
     /* =========================
-       PORTFOLIO
-    ========================= */
+       MY JOBS
+       ALL WORK TOGETHER
+    ========================== */
 
     .portfolio {
       background: var(--black-soft);
@@ -378,7 +377,7 @@
     .portfolio-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
+      gap: 16px;
     }
 
     .portfolio-item {
@@ -388,6 +387,7 @@
       background: #111;
       border: 1px solid var(--line);
       position: relative;
+      display: block;
     }
 
     .portfolio-item img {
@@ -404,8 +404,11 @@
     .portfolio-overlay {
       position: absolute;
       inset: auto 0 0 0;
-      padding: 20px;
-      background: linear-gradient(transparent, rgba(0,0,0,.9));
+      padding: 25px 20px 18px;
+      background: linear-gradient(
+        transparent,
+        rgba(0,0,0,.9)
+      );
       opacity: 0;
       transition: .3s ease;
     }
@@ -414,14 +417,19 @@
       opacity: 1;
     }
 
+    .portfolio-overlay strong {
+      display: block;
+      font-size: 14px;
+    }
+
     .portfolio-overlay span {
-      font-size: 12px;
-      color: #ddd;
+      font-size: 11px;
+      color: #bbb;
     }
 
     /* =========================
        CTA
-    ========================= */
+    ========================== */
 
     .cta {
       position: relative;
@@ -455,7 +463,7 @@
 
     /* =========================
        CONTACT
-    ========================= */
+    ========================== */
 
     .contact-grid {
       display: grid;
@@ -488,6 +496,11 @@
       border: 1px solid var(--line);
       border-radius: 10px;
       background: #090909;
+      transition: .25s ease;
+    }
+
+    .contact-item:hover {
+      border-color: var(--red);
     }
 
     .contact-item small {
@@ -503,13 +516,45 @@
       font-size: 16px;
     }
 
-    .contact-item:hover {
+    .contact-buttons {
+      display: flex;
+      gap: 14px;
+      margin-top: 25px;
+      flex-wrap: wrap;
+    }
+
+    .contact-icon {
+      min-width: 125px;
+      padding: 15px 18px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #090909;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: .25s ease;
+    }
+
+    .contact-icon:hover {
       border-color: var(--red);
+      transform: translateY(-3px);
+    }
+
+    .contact-icon .icon {
+      font-size: 22px;
+      line-height: 1;
+    }
+
+    .contact-icon small {
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
     }
 
     /* =========================
        FOOTER
-    ========================= */
+    ========================== */
 
     footer {
       padding: 50px 0 25px;
@@ -563,7 +608,7 @@
 
     /* =========================
        MOBILE
-    ========================= */
+    ========================== */
 
     @media (max-width: 900px) {
 
@@ -685,6 +730,14 @@
         width: 100%;
       }
 
+      .contact-buttons {
+        flex-direction: column;
+      }
+
+      .contact-icon {
+        width: 100%;
+      }
+
       .footer-bottom {
         flex-direction: column;
         text-align: center;
@@ -695,305 +748,743 @@
 
 <body>
 
-  <!-- =========================
-       HEADER
-  ========================== -->
+<header>
+  <div class="container nav">
 
-  <header>
-    <div class="container nav">
+    <a href="#home" class="brand-full">
+      <img src="pixelpro-logo.png" alt="PixelPro">
+    </a>
 
-      <!-- FULL PIXELPRO WORDMARK -->
-      <a href="#home" class="brand-full">
-        <img src="pixelpro-logo.png" alt="PixelPro">
-      </a>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#portfolio">My Jobs</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
 
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+    <a href="#contact" class="nav-cta">Get In Touch →</a>
 
-      <a href="#contact" class="nav-cta">Get In Touch →</a>
+  </div>
+</header>
+
+
+<main>
+
+  <!-- HERO -->
+
+  <section class="hero" id="home">
+    <div class="container">
+
+      <div class="hero-content">
+
+        <img
+          src="pixelpro-logo.png"
+          class="hero-logo"
+          alt="PixelPro — Framing Excellence"
+        >
+
+        <div class="tagline">Framing Excellence</div>
+
+        <h1>
+          Visuals that make<br>
+          your brand <span>stand out.</span>
+        </h1>
+
+        <p>
+          PixelPro creates professional photography, photo edits,
+          graphic designs and video content built to communicate,
+          impress and leave a lasting impression.
+        </p>
+
+        <div class="buttons">
+          <a href="#portfolio" class="btn btn-primary">
+            View My Jobs →
+          </a>
+
+          <a href="#services" class="btn btn-outline">
+            Explore Services
+          </a>
+        </div>
+
+      </div>
 
     </div>
-  </header>
+  </section>
 
 
-  <!-- =========================
-       HERO
-  ========================== -->
+  <!-- ABOUT -->
 
-  <main>
+  <section class="about" id="about">
+    <div class="container">
 
-    <section class="hero" id="home">
-      <div class="container">
+      <div class="about-grid">
 
-        <div class="hero-content">
+        <div>
 
-          <!-- FULL WORDMARK -->
-          <img
-            src="pixelpro-logo.png"
-            class="hero-logo"
-            alt="PixelPro — Framing Excellence"
-          >
+          <div class="p-logo-box">
+            <img src="pixelpro-p.png" alt="PixelPro P mark">
+          </div>
 
-          <div class="tagline">Framing Excellence</div>
+        </div>
 
-          <h1>
-            Visuals that make<br>
-            your brand <span>stand out.</span>
-          </h1>
+        <div>
+
+          <h2>
+            We don't just create visuals.
+            <span>We frame excellence.</span>
+          </h2>
 
           <p>
-            PixelPro creates professional photography, photo edits,
-            graphic designs and video content built to communicate,
-            impress and leave a lasting impression.
+            PixelPro is a creative visual brand focused on transforming
+            ideas into polished, professional visuals.
           </p>
 
-          <div class="buttons">
-            <a href="#portfolio" class="btn btn-primary">
-              View Our Work →
+          <p>
+            From capturing the right moment to refining an image,
+            designing a visual identity or editing a compelling video,
+            every project receives attention to detail.
+          </p>
+
+          <div class="about-stats">
+
+            <div class="stat">
+              <strong>01</strong>
+              <span>Creative Direction</span>
+            </div>
+
+            <div class="stat">
+              <strong>02</strong>
+              <span>Visual Excellence</span>
+            </div>
+
+            <div class="stat">
+              <strong>03</strong>
+              <span>Client Focus</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- SERVICES -->
+
+  <section id="services">
+    <div class="container">
+
+      <div class="section-heading">
+
+        <img
+          src="pixelpro-p.png"
+          class="section-mark"
+          alt=""
+        >
+
+        <h2>Our Services</h2>
+
+        <p>
+          Professional visual services designed to make your ideas
+          look as good as they deserve.
+        </p>
+
+      </div>
+
+      <div class="services-grid">
+
+        <article class="service-card">
+          <div class="service-number">01</div>
+          <h3>Photography</h3>
+          <p>
+            Professional portraits, outdoor sessions,
+            events and creative photography.
+          </p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-number">02</div>
+          <h3>Photo Retouching</h3>
+          <p>
+            Clean, detailed and professional image
+            editing that enhances without losing realism.
+          </p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-number">03</div>
+          <h3>Graphic Design</h3>
+          <p>
+            Designs that communicate clearly and give
+            brands a stronger visual presence.
+          </p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-number">04</div>
+          <h3>Video Editing</h3>
+          <p>
+            Engaging edits for social media, brands,
+            events and creative projects.
+          </p>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- MY JOBS -->
+
+  <section class="portfolio" id="portfolio">
+    <div class="container">
+
+      <div class="section-heading">
+
+        <img
+          src="pixelpro-logo.png"
+          class="section-mark"
+          style="width:190px;"
+          alt="PixelPro"
+        >
+
+        <h2>My Jobs</h2>
+
+        <p>
+          A collection of creative work by PixelPro.
+        </p>
+
+      </div>
+
+      <div class="portfolio-grid">
+
+
+        <!-- CREATIVE -->
+
+        <a class="portfolio-item" href="#">
+          <img src="Portfolio-creative (1).jpg" alt="PixelPro creative project">
+          <div class="portfolio-overlay">
+            <strong>Creative Project</strong>
+            <span>PixelPro</span>
+          </div>
+        </a>
+
+        <a class="portfolio-item" href="#">
+          <img src="Portfolio-creative (2).jpg" alt="PixelPro creative project">
+          <div class="portfolio-overlay">
+            <strong>Creative Project</strong>
+            <span>PixelPro</span>
+          </div>
+        </a>
+
+
+        <!-- EVENT -->
+
+        <a class="portfolio-item" href="#">
+          <img src="Portfolio-event (1).jpg" alt="PixelPro event project">
+          <div class="portfolio-overlay">
+            <strong>Event Project</strong>
+            <span>PixelPro</span>
+          </div>
+        </a>
+
+        <a class="portfolio-item" href="#">
+          <img src="Portfolio-event (2).jpg" alt="PixelPro event project">
+          <div class="portfolio-overlay">
+            <strong>Event Project</strong>
+            <span>PixelPro</span>
+          </div>
+        </a>
+
+        <a class="portfolio-item" href="#">
+          <img src="Portfolio-event (3).jpg" alt="PixelPro event project">
+          <div class="portfolio-overlay">
+            <strong>Event Project</strong>
+            <span>PixelPro</span>
+          </div>
+        </a>
+
+        <a class="portfolio-item" href="#">
+          <img src="Portfolio-event (4).jpg" alt="PixelPro event project">
+          <div class="portfolio-overlay">
+            <strong>Event Project</strong>
+            <span>PixelPro</span>
+          </div>
+        </a>
+
+        <a class="portfolio-item" href="#">
+          <img src="Portfolio-event (5).jpg" alt="PixelPro event project">
+          <div class="portfolio-overlay">
+            <strong>Event Project</strong>
+            <span>PixelPro</span>
+          </div>
+        </a>
+
+
+        <!-- GRAPHIC DESIGN -->
+
+        <a class="portfolio-item" href="#">
+          <img src="Portfolio-graphic design (1).png" alt="PixelPro graphic design project">
+          <div class="portfolio-overlay">
+            <strong>Graphic Design Project</strong>
+            <span>PixelPro</span>
+          </div>
+        </a>
+
+        <a class="portfolio-item" href="#">
+          <img src="Portfolio-graphic design (1).jpg" alt="PixelPro graphic design project">
+          <div class="portfolio-overlay">
+            <strong>Graphic Design Project</strong>
+            <span>PixelPro</span>
+          </div>
+        </a>
+
+        <a class="portfolio-item" href="#">
+          <img src="Portfolio-graphic design (2).jpg" alt="PixelPro graphic design project">
+          <div class="portfolio-overlay">
+            <strong>Graphic Design Project</strong>
+            <span>PixelPro</span>
+          </div>
+        </a>
+
+        <a class="portfolio-item" href="#">
+          <img src="Portfolio-graphic design (2).png" alt="PixelPro graphic design project">
+          <div class="portfolio-overlay">
+            <strong>Graphic Design Project</strong>
+            <span>PixelPro</span>
+          </div>
+        </a>
+
+        <a class="portfolio-item" href="#">
+          <img src="Portfolio-graphic design (3).jpg" alt="PixelPro graphic design project">
+          <div class="portfolio-overlay">
+            <strong>Graphic Design Project</strong>
+            <span>PixelPro</span>
+          </div>
+        </a>
+
+        <a class="portfolio-item" href="#">
+          <img src="Portfolio-graphic design (3).png" alt="PixelPro graphic design project">
+          <div class="portfolio-overlay">
+            <strong>Graphic Design Project</strong>
+            <span>PixelPro</span>
+          </div>
+        </a>
+
+        <a class="portfolio-item" href="#">
+          <img src="Portfolio-graphic design (4).jpg" alt="PixelPro graphic design project">
+          <div class="portfolio-overlay">
+            <strong>Graphic Design Project</strong>
+            <span>PixelPro</span>
+          </div>
+        </a>
+
+        <a class="portfolio-item" href="#">
+          <img src="Portfolio-graphic design (4).png" alt="PixelPro graphic design project">
+          <div class="portfolio-overlay">
+            <strong>Graphic Design Project</strong>
+            <span>PixelPro</span>
+          </div>
+        </a>
+
+        <a class="portfolio-item" href="#">
+          <img src="Portfolio-graphic design (5).png" alt="PixelPro graphic design project">
+          <div class="portfolio-overlay">
+            <strong>Graphic Design Project</strong>
+            <span>PixelPro</span>
+          </div>
+        </a>
+
+        <a class="portfolio-item" href="#">
+          <img src="Portfolio-graphic design (6).png" alt="PixelPro graphic design project">
+          <div class="portfolio-overlay">
+            <strong>Graphic Design Project</strong>
+            <span>PixelPro</span>
+          </div>
+        </a>
+
+        <a class="portfolio-item" href="#">
+          <img src="Portfolio-graphic design (7).png" alt="PixelPro graphic design project">
+          <div class="portfolio-overlay">
+            <strong>Graphic Design Project</strong>
+            <span>PixelPro</span>
+          </div>
+        </a>
+
+        <a class="portfolio-item" href="#">
+          <img src="Portfolio-graphic design (8).png" alt="PixelPro graphic design project">
+          <div class="portfolio-overlay">
+            <strong>Graphic Design Project</strong>
+            <span>PixelPro</span>
+          </div>
+        </a>
+
+        <a class="portfolio-item" href="#">
+          <img src="Portfolio-graphic design (9).png" alt="PixelPro graphic design project">
+          <div class="portfolio-overlay">
+            <strong>Graphic Design Project</strong>
+            <span>PixelPro</span>
+          </div>
+        </a>
+
+        <a class="portfolio-item" href="#">
+          <img src="Portfolio-graphic design (10).png" alt="PixelPro graphic design project">
+          <div class="portfolio-overlay">
+            <strong>Graphic Design Project</strong>
+            <span>PixelPro</span>
+          </div>
+        </a>
+
+
+        <!-- PORTRAIT PHOTOGRAPHY -->
+
+        <a class="portfolio-item" href="#">
+          <img src="Portfolio-portrait photography (1).jpg" alt="PixelPro portrait photography">
+          <div class="portfolio-overlay">
+            <strong>Portrait Photography</strong>
+            <span>PixelPro</span>
+          </div>
+        </a>
+
+        <a class="portfolio-item" href="#">
+          <img src="Portfolio-portrait photography (2).jpg" alt="PixelPro portrait photography">
+          <div class="portfolio-overlay">
+            <strong>Portrait Photography</strong>
+            <span>PixelPro</span>
+          </div>
+        </a>
+
+        <a class="portfolio-item" href="#">
+          <img src="Portfolio-portrait photography (3).jpg" alt="PixelPro portrait photography">
+          <div class="portfolio-overlay">
+            <strong>Portrait Photography</strong>
+            <span>PixelPro</span>
+          </div>
+        </a>
+
+        <a class="portfolio-item" href="#">
+          <img src="Portfolio-portrait photography (4).jpg" alt="PixelPro portrait photography">
+          <div class="portfolio-overlay">
+            <strong>Portrait Photography</strong>
+            <span>PixelPro</span>
+          </div>
+        </a>
+
+        <a class="portfolio-item" href="#">
+          <img src="Portfolio-portrait photography (5).jpg" alt="PixelPro portrait photography">
+          <div class="portfolio-overlay">
+            <strong>Portrait Photography</strong>
+            <span>PixelPro</span>
+          </div>
+        </a>
+
+        <a class="portfolio-item" href="#">
+          <img src="Portfolio-portrait photography (6).jpg" alt="PixelPro portrait photography">
+          <div class="portfolio-overlay">
+            <strong>Portrait Photography</strong>
+            <span>PixelPro</span>
+          </div>
+        </a>
+
+        <a class="portfolio-item" href="#">
+          <img src="Portfolio-portrait photography (7).jpg" alt="PixelPro portrait photography">
+          <div class="portfolio-overlay">
+            <strong>Portrait Photography</strong>
+            <span>PixelPro</span>
+          </div>
+        </a>
+
+        <a class="portfolio-item" href="#">
+          <img src="Portfolio-portrait photography (8).jpg" alt="PixelPro portrait photography">
+          <div class="portfolio-overlay">
+            <strong>Portrait Photography</strong>
+            <span>PixelPro</span>
+          </div>
+        </a>
+
+        <a class="portfolio-item" href="#">
+          <img src="Portfolio-portrait photography (9).jpg" alt="PixelPro portrait photography">
+          <div class="portfolio-overlay">
+            <strong>Portrait Photography</strong>
+            <span>PixelPro</span>
+          </div>
+        </a>
+
+        <a class="portfolio-item" href="#">
+          <img src="Portfolio-portrait photography (10).jpg" alt="PixelPro portrait photography">
+          <div class="portfolio-overlay">
+            <strong>Portrait Photography</strong>
+            <span>PixelPro</span>
+          </div>
+        </a>
+
+        <a class="portfolio-item" href="#">
+          <img src="Portfolio-portrait photography (11).jpg" alt="PixelPro portrait photography">
+          <div class="portfolio-overlay">
+            <strong>Portrait Photography</strong>
+            <span>PixelPro</span>
+          </div>
+        </a>
+
+        <a class="portfolio-item" href="#">
+          <img src="Portfolio-portrait photography (12).jpg" alt="PixelPro portrait photography">
+          <div class="portfolio-overlay">
+            <strong>Portrait Photography</strong>
+            <span>PixelPro</span>
+          </div>
+        </a>
+
+        <a class="portfolio-item" href="#">
+          <img src="Portfolio-portrait photography (13).jpg" alt="PixelPro portrait photography">
+          <div class="portfolio-overlay">
+            <strong>Portrait Photography</strong>
+            <span>PixelPro</span>
+          </div>
+        </a>
+
+        <a class="portfolio-item" href="#">
+          <img src="Portfolio-portrait photography (14).jpg" alt="PixelPro portrait photography">
+          <div class="portfolio-overlay">
+            <strong>Portrait Photography</strong>
+            <span>PixelPro</span>
+          </div>
+        </a>
+
+        <a class="portfolio-item" href="#">
+          <img src="Portfolio-portrait photography (15).jpg" alt="PixelPro portrait photography">
+          <div class="portfolio-overlay">
+            <strong>Portrait Photography</strong>
+            <span>PixelPro</span>
+          </div>
+        </a>
+
+        <a class="portfolio-item" href="#">
+          <img src="Portfolio-portrait photography (16).jpg" alt="PixelPro portrait photography">
+          <div class="portfolio-overlay">
+            <strong>Portrait Photography</strong>
+            <span>PixelPro</span>
+          </div>
+        </a>
+
+        <a class="portfolio-item" href="#">
+          <img src="Portfolio-portrait photography (17).jpg" alt="PixelPro portrait photography">
+          <div class="portfolio-overlay">
+            <strong>Portrait Photography</strong>
+            <span>PixelPro</span>
+          </div>
+        </a>
+
+        <a class="portfolio-item" href="#">
+          <img src="Portfolio-portrait photography (18).jpg" alt="PixelPro portrait photography">
+          <div class="portfolio-overlay">
+            <strong>Portrait Photography</strong>
+            <span>PixelPro</span>
+          </div>
+        </a>
+
+        <a class="portfolio-item" href="#">
+          <img src="Portfolio-portrait photography (19).jpg" alt="PixelPro portrait photography">
+          <div class="portfolio-overlay">
+            <strong>Portrait Photography</strong>
+            <span>PixelPro</span>
+          </div>
+        </a>
+
+        <a class="portfolio-item" href="#">
+          <img src="Portfolio-portrait photography (20).jpg" alt="PixelPro portrait photography">
+          <div class="portfolio-overlay">
+            <strong>Portrait Photography</strong>
+            <span>PixelPro</span>
+          </div>
+        </a>
+
+        <a class="portfolio-item" href="#">
+          <img src="Portfolio-portrait photography (21).jpg" alt="PixelPro portrait photography">
+          <div class="portfolio-overlay">
+            <strong>Portrait Photography</strong>
+            <span>PixelPro</span>
+          </div>
+        </a>
+
+        <a class="portfolio-item" href="#">
+          <img src="Portfolio-portrait photography (22).jpg" alt="PixelPro portrait photography">
+          <div class="portfolio-overlay">
+            <strong>Portrait Photography</strong>
+            <span>PixelPro</span>
+          </div>
+        </a>
+
+        <a class="portfolio-item" href="#">
+          <img src="Portfolio-portrait photography (23).jpg" alt="PixelPro portrait photography">
+          <div class="portfolio-overlay">
+            <strong>Portrait Photography</strong>
+            <span>PixelPro</span>
+          </div>
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- CTA -->
+
+  <section class="cta">
+    <div class="container">
+
+      <div class="cta-grid">
+
+        <img
+          src="pixelpro-p.png"
+          class="cta-logo"
+          alt="PixelPro"
+        >
+
+        <div>
+          <h2>Let's create something exceptional.</h2>
+          <p>
+            Have a project in mind? Let's bring it to life.
+          </p>
+        </div>
+
+        <a href="#contact" class="btn btn-primary">
+          Start a Project →
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section class="contact" id="contact">
+    <div class="container">
+
+      <div class="contact-grid">
+
+        <div>
+
+          <h2>
+            Get in <span>touch.</span>
+          </h2>
+
+          <p class="contact-intro">
+            Ready to work together? Reach out and let's discuss
+            your next creative project.
+          </p>
+
+          <div class="contact-buttons">
+
+            <a
+              class="contact-icon"
+              href="https://wa.me/2349029308430"
+              target="_blank"
+              rel="noopener"
+            >
+              <span class="icon">☏</span>
+              <small>WhatsApp</small>
             </a>
 
-            <a href="#services" class="btn btn-outline">
-              Explore Services
+            <a
+              class="contact-icon"
+              href="mailto:sirgentikoabasi@gmail.com"
+            >
+              <span class="icon">✉</span>
+              <small>Email</small>
             </a>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- =========================
-         ABOUT
-    ========================== -->
-
-    <section class="about" id="about">
-      <div class="container">
-
-        <div class="about-grid">
-
-          <div>
-
-            <!-- P-ONLY LOGO -->
-            <div class="p-logo-box">
-              <img src="pixelpro-p.png" alt="PixelPro P mark">
-            </div>
-
-          </div>
-
-          <div>
-
-            <h2>
-              We don't just create visuals.
-              <span>We frame excellence.</span>
-            </h2>
-
-            <p>
-              PixelPro is a creative visual brand focused on transforming
-              ideas into polished, professional visuals.
-            </p>
-
-            <p>
-              From capturing the right moment to refining an image,
-              designing a visual identity or editing a compelling video,
-              every project receives attention to detail.
-            </p>
-
-            <div class="about-stats">
-
-              <div class="stat">
-                <strong>01</strong>
-                <span>Creative Direction</span>
-              </div>
-
-              <div class="stat">
-                <strong>02</strong>
-                <span>Visual Excellence</span>
-              </div>
-
-              <div class="stat">
-                <strong>03</strong>
-                <span>Client Focus</span>
-              </div>
-
-            </div>
 
           </div>
 
         </div>
 
-      </div>
-    </section>
 
+        <div class="contact-list">
 
-    <!-- =========================
-         SERVICES
-    ========================== -->
-
-    <section id="services">
-      <div class="container">
-
-        <div class="section-heading">
-
-          <!-- P MARK -->
-          <img
-            src="pixelpro-p.png"
-            class="section-mark"
-            alt=""
+          <a
+            class="contact-item"
+            href="https://wa.me/2349029308430"
+            target="_blank"
+            rel="noopener"
           >
+            <small>WhatsApp</small>
+            <strong>+234 902 930 8430</strong>
+          </a>
 
-          <h2>Our Services</h2>
+          <a
+            class="contact-item"
+            href="mailto:sirgentikoabasi@gmail.com"
+          >
+            <small>Email</small>
+            <strong>sirgentikoabasi@gmail.com</strong>
+          </a>
 
-          <p>
-            Professional visual services designed to make your ideas
-            look as good as they deserve.
-          </p>
-
-        </div>
-
-        <div class="services-grid">
-
-          <article class="service-card">
-            <div class="service-number">01</div>
-            <h3>Photography</h3>
-            <p>
-              Professional portraits, outdoor sessions,
-              events and creative photography.
-            </p>
-          </article>
-
-          <article class="service-card">
-            <div class="service-number">02</div>
-            <h3>Photo Retouching</h3>
-            <p>
-              Clean, detailed and professional image
-              editing that enhances without losing realism.
-            </p>
-          </article>
-
-          <article class="service-card">
-            <div class="service-number">03</div>
-            <h3>Graphic Design</h3>
-            <p>
-              Designs that communicate clearly and give
-              brands a stronger visual presence.
-            </p>
-          </article>
-
-          <article class="service-card">
-            <div class="service-number">04</div>
-            <h3>Video Editing</h3>
-            <p>
-              Engaging edits for social media, brands,
-              events and creative projects.
-            </p>
-          </article>
+          <div class="contact-item">
+            <small>Brand</small>
+            <strong>PixelPro — Framing Excellence</strong>
+          </div>
 
         </div>
 
       </div>
-    </section>
+
+    </div>
+  </section>
+
+</main>
 
 
-    <!-- =========================
-         PORTFOLIO
-    ========================== -->
+<!-- FOOTER -->
 
-    <section class="portfolio" id="portfolio">
-      <div class="container">
+<footer>
 
-        <div class="section-heading">
+  <div class="container">
 
-          <!-- FULL WORDMARK -->
-          <img
-            src="pixelpro-logo.png"
-            class="section-mark"
-            style="width:190px;"
-            alt="PixelPro"
-          >
+    <div class="footer-top">
 
-          <h2>Selected Work</h2>
+      <img
+        src="pixelpro-logo.png"
+        class="footer-logo"
+        alt="PixelPro"
+      >
 
-          <p>
-            A selection of creative work from PixelPro.
-          </p>
-
-        </div>
-
-        <div class="portfolio-grid">
-
-          <!-- Replace these filenames with your actual portfolio images -->
-
-          <a class="portfolio-item" href="#">
-            <img src="portfolio-1.jpg" alt="PixelPro photography project">
-            <div class="portfolio-overlay">
-              <span>Photography</span>
-            </div>
-          </a>
-
-          <a class="portfolio-item" href="#">
-            <img src="portfolio-2.jpg" alt="PixelPro portrait project">
-            <div class="portfolio-overlay">
-              <span>Portrait</span>
-            </div>
-          </a>
-
-          <a class="portfolio-item" href="#">
-            <img src="portfolio-3.jpg" alt="PixelPro editing project">
-            <div class="portfolio-overlay">
-              <span>Photo Editing</span>
-            </div>
-          </a>
-
-          <a class="portfolio-item" href="#">
-            <img src="portfolio-4.jpg" alt="PixelPro graphic design project">
-            <div class="portfolio-overlay">
-              <span>Graphic Design</span>
-            </div>
-          </a>
-
-          <a class="portfolio-item" href="#">
-            <img src="portfolio-5.jpg" alt="PixelPro creative project">
-            <div class="portfolio-overlay">
-              <span>Creative Work</span>
-            </div>
-          </a>
-
-          <a class="portfolio-item" href="#">
-            <img src="portfolio-6.jpg" alt="PixelPro visual project">
-            <div class="portfolio-overlay">
-              <span>Visual Design</span>
-            </div>
-          </a>
-
-        </div>
-
+      <div class="socials">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">My Jobs</a>
+        <a href="#contact">Contact</a>
       </div>
-    </section>
 
+      <div class="footer-contact">
+        +234 902 930 8430<br>
+        sirgentikoabasi@gmail.com
+      </div>
 
-    <!-- =========================
-         CTA
-    ========================== -->
+    </div>
 
-    <section class="cta">
-      <div class="container">
+    <div class="footer-bottom">
 
-        <div class="cta-grid">
+      <span>
+        © 2026 PixelPro. All rights reserved.
+      </span>
 
-          <!-- P-ONLY LOGO -->
-          <img
-            src="pixelpro-p.png"
-            class="cta-logo"
-            alt="PixelPro"
-          >
+      <span>
+        Framing Excellence.
+      </span>
 
-          <div>
-            <h2>Let's create something exceptional.</h2>
-            <p>
-              Have a project in mind? Let's bring it to life.
+    </div>
+
+  </div>
+
+</footer>
+
+</body>
+</html>
