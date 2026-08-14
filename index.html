@@ -444,116 +444,50 @@ section{
    FANCY PORTFOLIO GRID
 ========================= */
 
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 230px;
-  gap: 18px;
+..portfolio-grid{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  grid-auto-rows:220px;
+  gap:18px;
 }
 
-/* Individual cards */
-
-.portfolio-item {
-  position: relative;
-  display: block;
-  overflow: hidden;
-  border-radius: 16px;
-  background: #0b0b0b;
-  border: 1px solid rgba(255,255,255,.08);
-  cursor: pointer;
-  transition: .35s ease;
+.portfolio-item{
+  grid-column:span 1;
+  grid-row:span 1;
 }
 
-/* Make images fill their grid areas */
-
-.portfolio-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform .5s ease, filter .5s ease;
+.portfolio-opening{
+  grid-column:span 2;
+  grid-row:span 2;
 }
 
-/* Fancy layout */
-
-./* CONTINUING GRID PATTERN */
-
-.portfolio-item:nth-child(1),
-.portfolio-item:nth-child(8),
-.portfolio-item:nth-child(15) {
-  grid-column: span 2;
-  grid-row: span 2;
-}
-
-.portfolio-item:nth-child(2),
 .portfolio-item:nth-child(4),
-.portfolio-item:nth-child(7),
-.portfolio-item:nth-child(10),
-.portfolio-item:nth-child(13),
-.portfolio-item:nth-child(16) {
-  grid-column: span 1;
-  grid-row: span 1;
+.portfolio-item:nth-child(9),
+.portfolio-item:nth-child(14),
+.portfolio-item:nth-child(19){
+  grid-column:span 2;
 }
 
-.portfolio-item:nth-child(3),
 .portfolio-item:nth-child(6),
 .portfolio-item:nth-child(11),
-.portfolio-item:nth-child(14) {
-  grid-column: span 1;
+.portfolio-item:nth-child(16),
+.portfolio-item:nth-child(21){
+  grid-row:span 2;
+}
+
+.portfolio-item:nth-child(12),
+.portfolio-item:nth-child(24),
+.portfolio-item:nth-child(32){
+  grid-column:span 2;
+  grid-row:span 2;
+}
+
+/* PIXELPRO OPENING WORK */
+
+.portfolio-opening {
+  grid-column: span 2;
   grid-row: span 2;
 }
-
-.portfolio-item:nth-child(5),
-.portfolio-item:nth-child(9),
-.portfolio-item:nth-child(12) {
-  grid-column: span 2;
-  grid-row: span 1;
-  }
-/* Hover */
-
-.portfolio-item:hover {
-  transform: translateY(-4px);
-  border-color: rgba(255,32,40,.5);
-}
-
-.portfolio-item:hover img {
-  transform: scale(1.07);
-  filter: brightness(.72);
-}
-
-/* Overlay */
-
-.portfolio-overlay {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 60px 20px 20px;
-  background: linear-gradient(
-    transparent,
-    rgba(0,0,0,.92)
-  );
-  opacity: 0;
-  transform: translateY(10px);
-  transition: .35s ease;
-}
-
-.portfolio-item:hover .portfolio-overlay {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.portfolio-overlay strong {
-  display: block;
-  font-size: 15px;
-  margin-bottom: 3px;
-}
-
-.portfolio-overlay span {
-  color: #bbb;
-  font-size: 12px;
-}
-
 
 /* TABLET */
 
@@ -1387,7 +1321,7 @@ footer{
       </a>
 
 
-      <a class="portfolio-item" href="#">
+      <a class="portfolio-item portfolio-opening" href="#">
         <img
           src="Portfolio-graphic design (1).jpg"
           alt="PixelPro graphic design project"
