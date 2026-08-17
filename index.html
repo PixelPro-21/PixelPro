@@ -459,13 +459,12 @@ section{
   overflow:hidden;
   grid-column:span 1;
   grid-row:span 1;
-}
-
-/* PIXELPRO OPENING WORK */
-.portfolio-opening{
-  grid-column:1 / -1 !important;
-  grid-row:span 2 !important;
-  order:-1 !important;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:18px;
+  box-shadow:0 0 0 1px rgba(255,255,255,.03),
+             0 8px 30px rgba(0,0,0,.25);
+  transition:transform .35s ease,
+             box-shadow .35s ease;
 }
 
 .portfolio-item img{
@@ -473,6 +472,22 @@ section{
   height:100%;
   object-fit:cover;
   display:block;
+}
+
+.portfolio-item:hover{
+  transform:translateY(-4px);
+  box-shadow:0 0 18px rgba(255,255,255,.12),
+             0 14px 35px rgba(0,0,0,.35);
+}
+
+/* =========================
+   PIXELPRO OPENING
+========================= */
+
+.portfolio-opening{
+  grid-column:1 / -1 !important;
+  grid-row:span 2 !important;
+  order:-1 !important;
 }
 
 @media (max-width: 900px) {
