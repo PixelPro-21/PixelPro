@@ -441,7 +441,7 @@ section{
   font-size:12px;
 }
 /* =========================
-   FANCY PORTFOLIO GRID
+   PIXELPRO FANCY GRID
 ========================= */
 
 .portfolio-grid{
@@ -457,14 +457,13 @@ section{
   min-width:0;
   min-height:0;
   overflow:hidden;
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:18px;
+  box-shadow:
+    0 0 8px rgba(255,255,255,.08),
+    0 0 22px rgba(255,255,255,.04);
   grid-column:span 1;
   grid-row:span 1;
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:18px;
-  box-shadow:0 0 0 1px rgba(255,255,255,.03),
-             0 8px 30px rgba(0,0,0,.25);
-  transition:transform .35s ease,
-             box-shadow .35s ease;
 }
 
 .portfolio-item img{
@@ -474,20 +473,42 @@ section{
   display:block;
 }
 
-.portfolio-item:hover{
-  transform:translateY(-4px);
-  box-shadow:0 0 18px rgba(255,255,255,.12),
-             0 14px 35px rgba(0,0,0,.35);
-}
-
 /* =========================
-   PIXELPRO OPENING
+   OPENING FEATURE
 ========================= */
 
 .portfolio-opening{
   grid-column:1 / -1 !important;
   grid-row:span 2 !important;
   order:-1 !important;
+}
+
+/* =========================
+   FANCY CARD SIZES
+========================= */
+
+/* WIDE */
+.portfolio-item:nth-child(2),
+.portfolio-item:nth-child(5),
+.portfolio-item:nth-child(10),
+.portfolio-item:nth-child(15){
+  grid-column:span 2;
+}
+
+/* TALL */
+.portfolio-item:nth-child(3),
+.portfolio-item:nth-child(8),
+.portfolio-item:nth-child(13),
+.portfolio-item:nth-child(18){
+  grid-row:span 2;
+}
+
+/* LARGE */
+.portfolio-item:nth-child(4),
+.portfolio-item:nth-child(11),
+.portfolio-item:nth-child(17){
+  grid-column:span 2;
+  grid-row:span 2;
 }
 
 @media (max-width: 900px) {
