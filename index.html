@@ -518,6 +518,20 @@ section{
   grid-column:span 2;
   grid-row:span 2;
 }
+
+  /* =========================
+   FINAL ROW BALANCE
+========================= */
+
+/* Give the final card more presence */
+.portfolio-item:last-child{
+  grid-column:span 2;
+}
+
+/* Make the second-to-last card tall */
+.portfolio-item:nth-last-child(2){
+  grid-row:span 2;
+}
   
 @media (max-width: 900px) {
 
