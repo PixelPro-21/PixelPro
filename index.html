@@ -519,18 +519,13 @@ section{
   grid-row:span 2;
 }
 
-  /* =========================
-   FINAL ROW BALANCE
+/* =========================
+   FINAL PORTRAIT
 ========================= */
 
-/* Give the final card more presence */
-.portfolio-item:last-child{
-  grid-column:span 2;
-}
-
-/* Make the second-to-last card tall */
-.portfolio-item:nth-last-child(2){
-  grid-row:span 2;
+.portfolio-final{
+  grid-column:span 1 !important;
+  grid-row:span 2 !important;
 }
   
 @media (max-width: 900px) {
@@ -1897,6 +1892,17 @@ footer{
   </div>
 </a>
 
+      <a class="portfolio-item portfolio-final" href="#">
+  <img
+    src="abSm.png"
+    alt="PixelPro portrait photography"
+  >
+  <div class="portfolio-overlay">
+    <strong>Portrait Photography</strong>
+    <span>PixelPro</span>
+  </div>
+      </a>
+      
     </div>
   </div>
 </section>
